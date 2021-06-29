@@ -4,17 +4,17 @@ var speed,weight,thickness
 
 
 function setup() {
-  createCanvas(1600,400);
+  createCanvas(1000,400);
 
 speed=random(55,90)
 weight=random(400,1500)
 
-car=createSprite(50,200,50,30)
-bullet.shapeColor(255)
-car.velocityX = speed;
+bullet=createSprite(50,200,50,30)
+bullet.shapeColor = "green";
+bullet.velocityX = speed;
 
-wall=createSprite(1200,200,thickness,height/2)
-wall.shapeColor(80,80,80)
+wall=createSprite(800,200,thickness,height/2)
+wall.shapeColor = "red"
 
 thickness=random(22,83)
 speed=random(233,321)
@@ -45,14 +45,13 @@ if(hasCollided(bullet,wall)){
 }
 
 
-function hasCollided(bullet,wall){
-  
- bulletRightEdge=bullet.x+bullet.width;
-  wallLeftEdge=wall.x
- if(bulletRightEdge>=wallleftEdge){
-   return true
- }
- return false
-
+function hasCollided(lbullet, lwall)
+{
+	bulletRightEdge=lbullet.x +lbullet.width;
+	wallLeftEdge=lwall.x;
+	if (bulletRightEdge>=wallLeftEdge)
+	{
+		return true
+	}
+	return false;
 }
-
